@@ -8,4 +8,4 @@ COPY . /src
 
 EXPOSE 8000
 
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "application:create_app('config.DevelpmentConfig')"]
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "application:create_app('config.ProductionConfig')"]
