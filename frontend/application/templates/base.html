@@ -1,0 +1,28 @@
+<html>
+    <head>
+        {% if title %}
+            <title>{{ title }} - Quimero</title>
+        {% else %}
+            <title>Welcome to Quimero</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>
+            Quimero:
+            <a href="{{ url_for('default.index') }}">Home</a>
+            <a href="{{ url_for('auth.login') }}">Login</a>
+            <a href="{{ url_for('auth.register') }}">Register</a>
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

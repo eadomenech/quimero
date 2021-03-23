@@ -1,0 +1,10 @@
+flask
+flask-login
+python-dotenv
+flask-wtf
+requests
+flask-debugtoolbar
+pytest==5.0.1
+gunicorn
+pyjwt==1.7.1
+cryptography

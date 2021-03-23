@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  api:
+    container_name: quimero-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile-dev
+    ports:
+      - "8001:8001"
+  web:
+    container_name: quimero-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile-dev
+    ports:
+      - "8000:8000"
+    depends_on:
+      - api
