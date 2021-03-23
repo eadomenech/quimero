@@ -4,5 +4,7 @@ RUN pip install fastapi uvicorn
 
 COPY ./app /app
 
+EXPOSE 8001
+
 CMD ["uvicorn", "app.main:app", "--host", "127.0.0.1", "--port", "8001"]
 
