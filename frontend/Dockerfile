@@ -6,4 +6,4 @@ COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . /src
 
-CMD ["gunicorn", "-b", "0.0.0.0:8002", "application:create_app('config.ProductionConfig')"]
+CMD ["gunicorn", "-b", "127.0.0.1:8002", "application:create_app('config.ProductionConfig')"]
